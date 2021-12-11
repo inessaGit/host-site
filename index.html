@@ -7,12 +7,16 @@
 <title> My Website</title>
 </head>
 <body>
-
+<header id="page-header">Header</header>
 <h1 style="color:green">Hello</h1>
-<div id="blue">Section 1: </div>
+<div id="blue"><h2>Section 1:</h2> </div>
 <script src= "./script.js"> </script>
 
-<div> hello 2</div>
+<div> 
+  <img class="top-image" src="images/christmas.jpeg" alt="Christmas" >
+  <img class="top-image" src="images/javascript.jpeg" alt="Christmas2" >
+
+</div>
 <div class="container">
     <div class="view list-view">
       <ul class="list">
@@ -55,7 +59,11 @@
       <button class="back-button">Back</button>
     </div>
   </div>
+<footer id="page-footer">FOOTER
 
+  <small class="site-footer__copyright-content">© 2021 </small>
+  <small class="site-footer__copyright-content">Made in USA</small>
+</footer>
   <script>
     function onViewChange(evt) {
             container.classList.toggle('view-change');
