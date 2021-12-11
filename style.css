@@ -20,14 +20,13 @@ html, body {
   }
 
   .view {
+    will-change: transform;
     width: 100%;
-    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    /* let the browser know we plan to animate
-       each view in and out */
-    will-change: transform;
+    transition: -webkit-transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
   }
 
   .list-view {
@@ -37,30 +36,35 @@ html, body {
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
   }
-  .view {
-    transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-  }
+
   .details-view {
+    -webkit-transform: translateX(100%);
     transform: translateX(100%);
+
+    box-sizing: border-box;
+    padding: 30px;
   }
 
   .view-change .list-view {
+    -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
   }
-  
+
   .view-change .details-view {
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
-.list {
-			  list-style: none;
-			  padding: 0;
-			  margin: 0;
-			}
 
-			.list li {
-			  box-sizing: border-box;
-			  line-height: 50px;
-			  padding: 0 30px;
-			  border-bottom: 1px solid #CCC;
-			  background: linear-gradient(to bottom, #FFF, #FAFAFA);
-			}
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .list li {
+    box-sizing: border-box;
+    line-height: 50px;
+    padding: 0 30px;
+    border-bottom: 1px solid #CCC;
+    background: linear-gradient(to bottom, #FFF, #FAFAFA);
+  }
