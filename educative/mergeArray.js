@@ -6,7 +6,9 @@ https://raddevon.com/articles/sort-array-numbers-javascript/
 
 function mergeArrays(arr1, arr2) {
     
-    let merged =[...arr1,...arr2].sort();
+    let merged =[...arr1,...arr2];
+    merged = merged.sort(a,b=> a-b);
+
     console.log(merged);
     return merged;
 }
