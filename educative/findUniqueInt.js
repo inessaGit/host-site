@@ -11,17 +11,21 @@ return unique[0];
 */
 
 function findFirstUnique(arr){
-let unique=[]; 
-
-    for (let el of arr){
-       if (unique.includes(el)==false){
-           unique.push(el);
-       }
-    }
-     if (unique.length>0){
-         return unique[0];
-     }
-     else 
-     return null;
+    const result = arr.find((x) => arr.indexOf(x) === arr.lastIndexOf(x));
+    return result;
 }
 //findFirstUnique(4,5,1,2,0,4)	
+
+let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+
+/**
+ * Filter array items based on search criteria (query)
+ */
+function filterItems(arr, query) {
+  return arr.filter(function(el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  })
+}
+
+console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
+console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
