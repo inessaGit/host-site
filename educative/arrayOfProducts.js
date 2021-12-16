@@ -13,10 +13,15 @@ function findProduct(arr){
 
     for (let i=0; i<arr.length; i++){
         if(arr.length>=2){
-         product*=arr[i];
+         product*=arr[i]; //product of all elements
          
         }
     }
+
+    for (let i=0; i<arr.length;i++){
+        productized.push(product/arr[i]);
+    }
+    return productized; 
 }
 
 
