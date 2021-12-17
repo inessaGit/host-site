@@ -1,12 +1,20 @@
 {
-<<<<<<< HEAD
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/leetcode/array/twoSum.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
         
-    
+
         {
             "type": "pwa-node",
             "request": "launch",
@@ -14,23 +22,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/educative/arrayOfProducts.js"
-=======
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "pwa-chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "type": "node-terminal",
-            "name": "JavaScript Debug Terminal",
-            "request": "launch",
-            "cwd": "${workspaceFolder}"
->>>>>>> 7145a078bb35e6d8143821b7a59ac4791309f6d2
+            "program": "${workspaceFolder}/string/anagram.js"
         }
     ]
 }
