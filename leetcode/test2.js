@@ -9,23 +9,36 @@ let a= [9,2,3,2,6,6];
 let b=[4,5,1,2,0,4]; 
 //findFirstUnique(a); 
 
-console.log(a.length)
+ 
+for (let i=0;i<4;i++){
+  let x=1;
+  x++;
+ while(x<4){
+  console.log(`i=${i} x=${x}`);
+  x++;
+  }
 
-delete a[2];
-console.log(a)
-console.log(a.length)
+}
+/*
+i=0 x=2
+i=0 x=3
 
-let binarySearch = function(a, key) {
-    let low =0;
-    let high = a.length-1; 
-  
-    while(low<=high){
-      let mid = Math.floor(low +(high-low)/2); 
-      if (key===a[mid]) return mid;
-      else if (key<a[mid]) high =mid-1; //search in the first half high =mid-1; 
-      else if (key>a[mid]) low= mid+1; //search in the second half from mid+1 -till high 
-      else return -1; 
-    }
-  };
-  binarySearch([1,2,4,7,8,12],44);
+i=1 x=2
+i=1 x=3
 
+i=2 x=2
+i=2 x=3
+
+i=3 x=2
+i=3 x=3
+*/
+
+// for each iteration of OUTTER loop inner loop will run x num of times 
+for (let i=0;i<5;i++){
+  console.log(`OUTTER loop ${i}`); //runs 5 times 
+
+  for (let j=i;j<5;j++){
+      console.log(`--inner loop ${j}`); //runs 25 times 
+
+  }
+}

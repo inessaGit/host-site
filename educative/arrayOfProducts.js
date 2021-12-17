@@ -4,6 +4,9 @@ https://www.educative.io/courses/data-structures-coding-interviews-javascript/7n
 Given an array, return an array where each index stores the product of all numbers 
 in the array except the number at the index itself.
 The size of array should be greater or equal to 2 
+
+Case 1:can use division
+Cas2: O(n) and no division
 */
 
 function findProduct(arr){
@@ -31,6 +34,20 @@ function findProduct(arr){
 // Inline callback function  map(function(element, index, array){ /* ... */ })
 //data.forEach(function(v, i, a) { a[i] = v + 1; }); // data == [2,3,4,5,6]
 
+//Case 2:
+function findProduct1(arr){
+    let answer=[];
+    let temp=1 ; 
+    
+    for (let i=0;i<arr.length;i++){
+        answer[i]=temp;
+
+        temp=temp*arr[i];
+    }
+
+    for (let i=arr.length-1;i>=-1;i--)
+
+}
 
 function findDoubled(arr){
      const doubled= arr.map(el=>el*2);
