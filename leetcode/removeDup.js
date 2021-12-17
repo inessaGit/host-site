@@ -9,4 +9,5 @@ var removeDuplicates1 = function(nums) {
     return nums.length;
 };
 
-removeDuplicates1([0,0,1,1,1,2,2,3,3,4]);
+//removeDuplicates1([0,0,1,1,1,2,2,3,3,4]);
+
