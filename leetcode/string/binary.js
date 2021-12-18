@@ -6,7 +6,6 @@ Output: "100"
 
 Input: a = "1010", b = "1011"
 Output: "10101"
-
 -- convert binary string into int 
  - do sum 
   - convert result into binary string using toString(2)
@@ -20,7 +19,10 @@ var addBinary=function(a,b){
  console.log(`num1=${num1} num2=${num2}`)
 
  //transform bigInt binary to bigInt decimal 
- 
+ num1=BigInt(num1.toString(10));
+ num2=BigInt(num2.toString(10));
+ console.log(num1,num2);
+
  sum = num1+num2; //sum stored as big int 
   sum=sum.toString(2); //cast sum to binary string
   console.log(`sum=${sum}`);
@@ -30,10 +32,15 @@ let c="1010000010010011011001000001010111101101100110111011111111110100000010111
 let d=
 "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011"
 let exp ="110111101100010011000101110110100000011101000101011001000011011000001100011110011010010011000000000"; 
-let a ="11"; 
-let b ="1"; 
+let a ="1010"; 
+let b ="1011"; 
 
 addBinary(a,b); 
+
+/*
+Input: a = "1010", b = "1011"
+Output: "10101"
+*/
 
 let test=function(){
 
@@ -59,4 +66,4 @@ console.log(number1.toString(10));
 
 }
 
-test();
+//test();
