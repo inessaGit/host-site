@@ -4,6 +4,9 @@ https://leetcode.com/explore/learn/card/array-and-string/203/introduction-to-str
 Input: a = "11", b = "1"
 Output: "100"
 
+https://leetcode.com/problems/add-binary/discuss/385148/Simple-JavaScript-solution-using-BigInt
+
+
 Input: a = "1010", b = "1011"
 Output: "10101"
 -- convert binary string into int 
