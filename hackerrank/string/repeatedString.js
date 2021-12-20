@@ -98,15 +98,7 @@ function test2(){
      console.log(Math.floor(8/3))
     
      let s="aba";
-     let original=s;
-     let modified ="";
-     for (let i=0;i<3;i++){
-         
-        s+=original; //concat
-        console.log(`i=${i} s=${s}||`)
-    }
-    
-    console.log("aba".repeat(3));
+    console.log(s.repeat(3));
 }
 
 
