@@ -29,3 +29,11 @@ let re1=new RegExp('\\d+', 'g');//diff way to declare
     return re;
 }
 
+function test(){
+    let s ="abcabc"
+   // let m=s.slice(0,5); //abcab endIndex BEFORE which to end extraction 
+   let m=s.slice(0,6);
+    console.log(m)
+}
+
+test();
