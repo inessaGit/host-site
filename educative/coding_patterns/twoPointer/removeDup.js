@@ -23,6 +23,8 @@ function remove_duplicates(arr) {
     // index of the next non-duplicate element
     let nextNonDuplicate = 1;
     let i = 1;
+
+    let result =[];
     while (i < arr.length) {
       if (arr[nextNonDuplicate - 1] !== arr[i]) {
         arr[nextNonDuplicate] = arr[i]; //to shift the element to the  left 
@@ -30,9 +32,11 @@ function remove_duplicates(arr) {
       }
       i += 1; //increment i to avoid inf loop 
     }
-
+     
+    result =[...arr.splice(0,nextNonDuplicate)];
+    console.log(result);
     return nextNonDuplicate;//it is acting as a pointer holding index of next non dup; 
-    //it is alomost acting as counter ;incremented only when non dup found;
+    //it is acting as counter ;incremented only when non dup found;
   }
   
   
