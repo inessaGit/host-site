@@ -21,9 +21,9 @@ var removeDuplicates2 = function(nums) {
   let i=1;
   let nextNonDup =1; //index of nextNonDup
 
-  while(i<arr.length){
-    if(arr[nextNonDup-1]!=arr[i]){
-      arr[nextNonDup]=arr[i] //ar[1]=ar[1]
+  while(i<nums.length){
+    if(nums[nextNonDup-1]!=nums[i]){
+      nums[nextNonDup]=nums[i] //ar[1]=ar[1]
       nextNonDup+=1; //increment counter and move pointer
     }
     i+=1; //increment i
@@ -34,3 +34,5 @@ var removeDuplicates2 = function(nums) {
 
 //console.log(removeDuplicates([2, 3, 3, 3, 6, 9, 9]));
  console.log(removeDuplicates([2, 2, 2, 11]));
+
+ console.log(removeDuplicates2([1,1,2]));
