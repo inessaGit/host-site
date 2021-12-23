@@ -8,10 +8,22 @@ A subarray is a contiguous part of an array.
 - NOT sorted
 Follow up: If you have figured out the O(n) solution, 
 try another solution using the divide and conquer approach, which is more subtle
+
+Approach: sliding window 
+https://www.educative.io/courses/grokking-the-coding-interview/JPKr0kqLGNP
+
+Kadane algorithm: 
+TODO : return later ..who marked this question as easy grr
 */
 
 var maxSubArray = function(nums) {
-    
+    let maxSum=0;
+    let windowSum=0;
+    let windowStart=0;
+
+    for (windowEnd=0;windowEnd<nums.length;windowEnd++){
+        windowSum+=nums[windowEnd]; 
+    }
 };
 
 let a=[5,4,-1,7,8]; //exp 23

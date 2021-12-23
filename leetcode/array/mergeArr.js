@@ -33,10 +33,10 @@ var merge1 = function(nums1,m, nums2,n) {
 
    while(p2>=0){
      if (nums1[p1]>nums2[p2]){
-        nums1[finish--]=nums1[p1--]
+        nums1[p_finish--]=nums1[p1--]
      }
      else {
-        nums1[finish--]=nums2[p2--]
+        nums1[p_finish--]=nums2[p2--]
      }
    }
 };
