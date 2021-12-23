@@ -21,7 +21,7 @@ let binarySearch = function (a,key){
         let mid = Math.floor(low+(high-low)/2);
         //if key ===mid return mid.indexOf 
      if (key===a[mid])return mid;
-     //search in the first range of low-mid-1
+     //e.g key =3 a[mid]=5 shift high to the LEFT 
      else if (key<a[mid]) high =mid-1;
      else low=mid+1; 
     }
