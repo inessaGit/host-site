@@ -2,6 +2,9 @@
 https://leetcode.com/problems/two-sum/
 Given an array of integers nums and an integer target, return indices of the two numbers 
 such that they add up to target
+
+-Array is NOT sorted 
+- do not use built in sort() because it will change indexes 
 */
 //Time complexity is O(n).
 
@@ -25,7 +28,6 @@ var twoSum = function(nums, target) {
 
    while(start<end){
         let sum=nums[start]+nums[end];   
-
          if(sum>target){
             //use smaller number aka move pointer end to the left
             end-=1;
@@ -47,7 +49,7 @@ var twoSum = function(nums, target) {
 let a2=[3,2,4]
 let t1=6; 
 
-twoSum([3,2,4],6); //exp [1,2] ->means cannot sort array first because sorting would 
-//affect indexes
+twoSum([3,2,4],6); //exp [1,2] ->means cannot sort  using built in sort() 
+//because sorting would affect indexes
 //twoSum([1, 2, 3, 4, 6], 6);
 //console.log(twoSum([2, 5, 9, 11], 11));
