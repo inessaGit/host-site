@@ -31,13 +31,14 @@ const numJewelsInStones1 = (J, S) => {
 const numJewelsInStones2 =function(jewels, stones) {
     let result =0;
     for (let char of stones){
-        if(jewels.indexOf(c)!=-1){
+        if(jewels.indexOf(char)!=-1){
             result++; 
         }
     }
+    return result;
 };
 
 
 let j="aA";
 let s ="aAAbbbb";  //exp 3 
-console.log(numJewelsInStones(j,s));
+console.log(numJewelsInStones2(j,s));

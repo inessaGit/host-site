@@ -19,26 +19,29 @@ for (let i=0;i<4;i++){
   }
 
 }
-/*
-i=0 x=2
-i=0 x=3
 
-i=1 x=2
-i=1 x=3
+function test(){
 
-i=2 x=2
-i=2 x=3
+  let i =0;
+  let j=0;
+  let k=0;
 
-i=3 x=2
-i=3 x=3
-*/
-
-// for each iteration of OUTTER loop inner loop will run x num of times 
-for (let i=0;i<5;i++){
-  console.log(`OUTTER loop ${i}`); //runs 5 times 
-
-  for (let j=i;j<5;j++){
-      console.log(`--inner loop ${j}`); //runs 25 times 
-
+  while(i<4){
+    i++; 
+    while(i<3&&j<3){
+      j++;
+      console.log(`First NESTED while loop i=${i} j=${j}`)
+    }
+    while(i<3&&k<2){
+      j++;
+      k++;
+      console.log(`SECOND NESTED while loop i=${i} j=${j} k=${k}`)
+    }
+    console.log(`OUTTER while loop i=${i}`)
+     console.log("belowe nested while loops : STILL INSIDE outter while loop")
   }
 }
+
+test();
+//outter while loop will run 4 times 
+// first inner while loop will run 3 times 
