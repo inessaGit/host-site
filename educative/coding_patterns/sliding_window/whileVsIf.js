@@ -13,7 +13,6 @@ function test(){
     while(k<=b){
         k+=1;
         console.log(`WHILE statement k= ${k}`) //3 4 5  
-
     }
 }
 
