@@ -20,6 +20,21 @@ var twoSum1 = function(nums, target) {
 	return [];
 };
 
+const twoSum2 = (nums, target) => {
+    const map = {};
+  
+    for (let i = 0; i < nums.length; i++) {
+      const another = target - nums[i];
+  
+      if (another in map) {
+        return [map[another], i];
+      }
+  
+      map[nums[i]] = i;
+    }
+  
+    return null;
+  };
 //use 2 pointers approch IF array sorted!!; go from start and end until pointers meet
 var twoSum = function(nums, target) {
     let start =0;
