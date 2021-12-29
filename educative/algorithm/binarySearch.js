@@ -33,3 +33,6 @@ let arr = [1, 10, 20, 47, 59, 63, 75, 88, 99, 107, 120, 133, 155, 162, 176, 188,
 let inputs = [10, 49, 99, 110, 176]
 
 binarySearch(arr,59);
+
+console.log(binarySearch([5],5));
+console.log(binarySearch([5],-5));
