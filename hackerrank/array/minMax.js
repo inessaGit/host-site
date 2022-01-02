@@ -24,11 +24,29 @@ function miniMaxSum1(arr) {
         let max = 0;
         arr.sort((a,b)=>{return a-b});
         for (let i = 0, j = 1; i < arr.length - 1 && j < arr.length ; i++,j++) {        
-            
             min += arr[i];
             max += arr[j];
         }
         console.log(min+" "+max);
+}
+function miniMaxSum2(arr) {
+    // Write your code here
+    var totalSum=0;
+    for(let i in arr){
+        //Calculating total sum of number
+        totalSum = totalSum+arr[i];
+    }
+    
+    //By using Math.max function of Javascript
+    var maxNumber = Math.max(...arr);
+    var minNumber = Math.min(...arr);
+    
+    //will give minimum sum of 4 numbers
+    var minimumSum = totalSum - maxNumber; 
+    
+    ////will give maximum sum of 4 numbers
+    var maximumSum = totalSum - minNumber;
+    console.log(`${minimumSum} ${maximumSum}`);
 
 }
 miniMaxSum1([1,3,5,7,9]);//16/24
