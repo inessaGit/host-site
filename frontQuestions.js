@@ -42,3 +42,32 @@ function test(){
         }
     }
 }
+
+var fizzBuzz = function(n) {
+    let answer=[];
+    
+    for (let i=1;i<=n;i++){
+       if(i%3===0 && i%5===0) answer.push("FizzBuzz");
+       else   if(i%3===0)answer.push("Fizz");
+       else  if(i%5===0)answer.push("Buzz");
+       else
+       {
+            answer.push(String(i));
+       }
+    }
+    console.log(answer)
+    return answer;
+};
+
+var fizzBuzz1 = function(n) {
+    let answer=[];
+    const FB="FizzBuzz";
+    const F="Fizz";
+    const B="Buzz";
+    for (let i=1;i<=n;i++){
+        i%15===0? answer.push(FB):i%3===0 ? answer.push(F):i%5===0 ?answer.push(B):
+        answer.push(String(i))
+    }
+    //console.log(answer)
+    return answer;
+};
