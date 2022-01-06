@@ -1,6 +1,7 @@
 /*
 https://leetcode.com/problems/increasing-decreasing-string/
 https://leetcode.com/problems/increasing-decreasing-string/discuss/947063/JavaScript-Solution
+Using counting sort ; 
 
  at index 0 store freq of a
  at index 1 store freq of b 
