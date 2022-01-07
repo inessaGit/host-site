@@ -37,3 +37,7 @@ while (i<n){
   console.log (find_missing_number([0,1]))
 //console.log(find_missing_number([4, 0, 3, 1]));
 //console.log(find_missing_number([8, 3, 5, 2, 4, 6, 0, 1]));
+
+let s ='l';
+s[0]='h'
+console.log(s)//l

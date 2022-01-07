@@ -14,7 +14,7 @@ function cyclic_sort(nums) {
 //e.g [4,5,6,3] Iteration 1: nums[i]= 4, j=nums[i]-1; j=4-1; j=3; 
 //it should be -1 because index starts at 0 ; 
       */
-      if (nums[i] !== nums[j]) {
+      if (nums[i] < nums[j]) {
         [nums[i], nums[j]] = [nums[j], nums[i]]; // swap
       } else {
         i += 1; //move to the next element
@@ -25,7 +25,7 @@ function cyclic_sort(nums) {
   
   
   console.log(cyclic_sort([3, 1, 5, 4, 2]));
-  //console.log(cyclic_sort([2, 6, 4, 3, 1, 5]));
+  console.log(cyclic_sort([2, 6, 4, 3, 1, 5]));
   //console.log(cyclic_sort([1, 5, 6, 4, 3, 2]));
 
   let a= [2,3];
