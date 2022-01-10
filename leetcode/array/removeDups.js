@@ -3,7 +3,6 @@ https://leetcode.com/explore/featured/card/fun-with-arrays/526/deleting-items-fr
 
 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 modifying the input array in-place with O(1) extra memory
-
 */
 
 // 33223

@@ -33,20 +33,26 @@ var intersect = function(nums1, nums2) {
         }
     }
 };
-//both arrays sorted 
- function intersectSorted(nums1,nums2){
+//both arrays sorted : use two pointers ; 
+//Dups: just check for every element whether adjacent elements are equal. 
+ 
+function intersectSorted(nums1,nums2){
 
+    //sort 
+    nums1= nums1.sort((a,b)=> a-b )
+    nums2=nums2.sort((a,b)=>a-b); 
+    
     let res=[];
     let m=nums1.length;
     let n=nums2.length; 
      let i=0;
      let j=0;
     while (i<m && j<n){
-        if (nums1[i]<nums2[j]) i++;
-        else if (nums2[j]<nums1[i]) j++;
-        else  {
-            res.push(nums1[i++])
-        }
+        let a= nums1[i];
+        let b=nums2[j];
+
+     a===b ? (i++,j++, res.push(a)):a<b? i++:j++;
+
     }
     console.log(res); 
  }
@@ -57,15 +63,7 @@ console.log(intersect(nums1,nums2)); //exp [2]
 
 console.log(intersect(nums1,nums3)); //exp [2,2]
 
-let a=[1,2,4,6];
+let a=[1,2,2,4,6];
 let b=[2,5,6]
 console.log(intersectSorted(a,b));
 
-let k=0, s=0;
-while (k<4 && s<2){
-    if (k<2) {
-        console.log("*"); k++; }
-    else if (s<2) {
-        console.log("**"); s++}
-    else console.log("****") 
-}
