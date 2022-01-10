@@ -10,6 +10,13 @@ let map3=[...map];//array of arrays [ [ 1, 1 ], [ 2, 2 ], [ 3, 1 ], [ '4', 4 ], 
 console.log(map3);
 console.log(map3.flat())
 
+//Map filter out and display keys based on value
+let res = Array.from(map.keys()).filter((key)=>{
+  return map.get(key)===1; //where val =1 
+});
+console.log(res); 
+
+
 //Loop over map keys
 for(let key of map.keys()){
     console.log(`using key ${key}`)
