@@ -46,3 +46,6 @@ test();
 //outter while loop will run 4 times 
 // first inner while loop will run 3 times till j <3 
 //second inner while loop will run 2 times till k<2
+
+//even odd
+

@@ -42,3 +42,24 @@ let b=[0,1,2,2,3,0,4,2]
 let a=[3,2,2,3];
 removeElement(b,2) // exp [0,1,4,0,3]
 
+let arr=[1,2,3,5];
+console.log(`before delete arr.length = ${arr.length}`)//4 
+
+for (let el of arr){
+    if (el===5){
+        delete arr[1];
+
+    }
+}
+console.log(arr);//[ 1, <1 empty item>, 3, 5 ]
+console.log(`after delete arr.length = ${arr.length}`) //4
+
+//for of loop still loops over sparse elements 
+for (let el of arr){
+    console.log(el); // 1, undefined, 3, 5 
+}
+
+//forEach loop  knows to skip sparse elements and executes only for the elements that are there 
+arr.forEach(el=>console.log(el));
+let res =arr.filter(el=>typeof el==='number');
+//console.log(res)
