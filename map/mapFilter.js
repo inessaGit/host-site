@@ -41,3 +41,9 @@ const object = {'a': 1, 'b': 2, 'c' : 3};
 for (const [key, value] of Object.entries(object)) {
   //console.log(key, value);
 }
+
+//filter map entries by value 
+
+let res = Array.from(map.entries()).filter(([k,v])=>{
+    return v===1;
+})
