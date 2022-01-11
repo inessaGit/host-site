@@ -39,11 +39,13 @@ function removeVowels2(s){
 let regexpVowels = /[aeiouy]/g; //
 let regexpNotVowels = /[^aeiouy]/g; //
 
-let ans =s.match(regexpNotVowels);
-console.log(ans.join(''));
-
-console.log(s.match(re).join(''));
+let ans =s.replace(regexpVowels,"");
+console.log(ans);
 }
 
-removeVowels2("abbcdeiouy");
-
+let s1="abbcdeiouy";
+removeVowels2(s1);
+let string ="hello I am here"
+//Using regex and array.map function 
+string = string.split("").map(x=>x. replace( /[aeiou]/ig, '' )).join('');
+console.log(string);
