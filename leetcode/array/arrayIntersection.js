@@ -8,6 +8,13 @@ This solution is O(N + M) time complexity, O(N) for iterate one of the array to 
 
 Follow up: 
 What if the given array is already sorted? How would you optimize your algorithm?
+Answer: Classic two pointer iteration, i points to nums1 and j points to nums2. 
+Because a sorted array is in ascending order, so if nums1[i] > nums[j], we need to increment j, 
+and vice versa. Only when nums1[i] == nums[j], we add it to the result array. \
+Time Complexity O(max(N, M)).
+--- how to handle dups? 
+
+
 What if nums1's size is small compared to nums2's size? Which algorithm is better?
 What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
 */
@@ -33,15 +40,10 @@ var intersect = function(nums1, nums2) {
         }
     }
 };
-//both arrays sorted : use two pointers ; 
-//Dups: just check for every element whether adjacent elements are equal. 
- 
-function intersectSorted(nums1,nums2){
+//both arrays sorted 
+//To handle the duplicates, just check for every element whether adjacent elements are equal
+ function intersectSorted(nums1,nums2){
 
-    //sort 
-    nums1= nums1.sort((a,b)=> a-b )
-    nums2=nums2.sort((a,b)=>a-b); 
-    
     let res=[];
     let m=nums1.length;
     let n=nums2.length; 
@@ -49,10 +51,19 @@ function intersectSorted(nums1,nums2){
      let j=0;
     while (i<m && j<n){
         let a= nums1[i];
-        let b=nums2[j];
+        let b = nums2[j];
 
-     a===b ? (i++,j++, res.push(a)):a<b? i++:j++;
-
+        if (a===b){
+            res.push(a); 
+            i++; 
+            j++; 
+        }
+        else if (a<b){
+            i++
+        }
+        else {
+            j++
+        }
     }
     console.log(res); 
  }
@@ -63,7 +74,7 @@ console.log(intersect(nums1,nums2)); //exp [2]
 
 console.log(intersect(nums1,nums3)); //exp [2,2]
 
-let a=[1,2,2,4,6];
+let a=[1,2,4,6];
 let b=[2,5,6]
 console.log(intersectSorted(a,b));
 
