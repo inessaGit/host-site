@@ -20,3 +20,6 @@ var longestNiceSubstring = function(s) {
    return s;     
     
 };
+
+let s="YazaAay"; //exp aAa 
+console.log(longestNiceSubstring(s));
