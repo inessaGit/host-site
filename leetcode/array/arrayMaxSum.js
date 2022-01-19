@@ -63,14 +63,22 @@ In the example below:
 - current value =array1[0]=A
 - take each el of array2 and map it to be currValue from array1 + element from array2
 
+so currValue =  A, it gets mapped to arr2 el to so curVal becomes [A1,A2,A3 ]
+then curVal becomes prevVal [A1,A2,A3] ; so now prevVal stores an array [A1,A2,A3]
+- curVal = B it gets mapped to arr2 el [B1,B2,B3]
+then it becomes prevVal ; so now prevVal stores [A1,A2,A3,B1,B2,B3];
+-currVal=C it gets mapped to arr2 el [C1,C2,C3]
+
+-then spread prevVal array , and spread curVal array
 [
   'A1', 'A2', 'A3',
   'B1', 'B2', 'B3',
   'C1', 'C2', 'C3'
 ]
+after removing spreading a : [ 'C1', 'C2', 'C3' ]
 */
 var result = array1.reduce( (a, v) =>
-    [...array2.map(x=>v+x)],
+    [...a,...array2.map(x=>v+x)],
 []);
 console.log(result);
 /*---------OR--------------*/
