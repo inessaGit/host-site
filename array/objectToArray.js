@@ -32,5 +32,10 @@ let res = Array.from(map.keys()).filter((key)=>{
     return map.get(key)===1; //where val =1 
   });
   console.log(res); 
+
+  let res2=Array.from(map.entries()).filter(([k,v])=>{
+       return map.get(key)>1;
+  });
   
+  console.log(res2);
   
