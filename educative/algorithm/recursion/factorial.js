@@ -35,7 +35,4 @@ var factorial = function(n) {
     return undefined
   };
     
-  let a =5; 
-  let isDivisible=false; 
-  a%4==0 ?  isDivisible=true :  isDivisible =false ;
-  console.log(isDivisible)
+  
