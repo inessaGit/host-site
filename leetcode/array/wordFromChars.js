@@ -11,18 +11,6 @@ Approach:
 
 */
 var countCharacters = function(words, chars) {
-    let sortedWords = [];
-    let sortedChars=chars.split('').sort().join('');
-
-    for (let word of words){
-        sortedWords.push(word.split('').sort());
-    }
-    for (let word of sortedWords){
-       
-        if (word===sortedChars.substring(0,word.length)){
-            sortedChars.substring
-        }
-    }
     
    
 };
@@ -30,6 +18,3 @@ var countCharacters = function(words, chars) {
 let words = ["cat","bt","hat","tree"], chars = "atach" //exp 6
 console.log(countCharacters(words,chars));
 
-let m = "hello";
-let n = m.substring(0,2);
-console.log(m);
