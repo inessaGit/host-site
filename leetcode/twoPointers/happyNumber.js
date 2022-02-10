@@ -12,9 +12,11 @@ Explanation:
 62 + 82 = 100
 12 + 02 + 02 = 1
 
-- fast and slow pointer 
+- fast and slow pointer  to find the cycle 
+- and once the cycle is found, see if the cycle is stuck on number ‘1’ 
+to find out if the number is happy or not.
+
 By moving at different speeds, the algorithm proves that the two pointers are bound to meet. 
-Instead of keeping track of just one value in the chain, we keep track of 2, 
 called the slow runner and the fast runner. 
 At each step of the algorithm, the slow runner goes forward by 1 number in the chain, a
 nd the fast runner goes forward by 2 numbers (nested calls to the getNext(n) function).
