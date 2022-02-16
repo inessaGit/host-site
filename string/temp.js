@@ -11,6 +11,9 @@ let array = [1,2,2,1];
 let a = array.slice(2);
 // console.log (a); //[2,1] 
 
+/*
+val =1, arr.slice(i+1)= [2,2,1]
+*/
 let array2 = [1,2,2,1]; 
 var result2= array2.flatMap(
     (val, i) => array2.slice(i+1).map( el => val + ' ' + el )
