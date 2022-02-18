@@ -15,7 +15,6 @@ function rotateLeft(arr,numOfRotations){
     let length = arr.length;
     for (let i=0;i<numOfRotations;i++){
         let temp =arr[0]; //first el
-
         for(let j=0;j<length-1;j++){
          arr[j]=arr[j+1];
         }
