@@ -11,13 +11,13 @@ var nextGreatestLetter = function(letters, target) {
     if(t <s.charCodeAt(0)-97 || t>=s.charCodeAt(n-1)-97) return letters[0];
     // console.log(s.charCodeAt(0)-97);
 
-    let low = target[0];
-    
     for (let i=0;i<n;i++){
         if (s.charCodeAt(i)-97>t){
             console.log(`>t ${s[i]}`);
             return letters[i];
         }
+        //works for start and middle ; letters = ["c","f","j"], target = "c" exp:f
+        //does not work for repeated chars or end 
         else if (s.charCodeAt(i)-97==t){
             return letters[i+1];
         }
