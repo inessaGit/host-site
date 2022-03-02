@@ -26,13 +26,10 @@ var letterCombinations = function(digits) {
    }  
    console.log(arr); //[ [ 'a', 'b', 'c' ], [ 'd', 'e', 'f' ] ]
 
-   //    console.log(a.flatMap(el => b.map(el2 => el + el2)))
-   res = arr.flatMap((innerArray,i)=> {
-    return  innerArray.map((el)=>{
-         return el;
-     })
-
-   });
+     let i= arr.length;
+     for (let innerArr of arr){
+         innerArr
+     }
       console.log(res)
    
    };
