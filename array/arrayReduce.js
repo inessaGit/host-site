@@ -63,9 +63,10 @@ console.log(a);
 
 function test2(){
     let b=["cat","dog","fish","cocoa"];
+
   let answer=  b.reduce((prevValue,curValue)=>{
      let flatten = prevValue.concat(curValue);
-     console.log(flatten)
+    // console.log(flatten)
      return flatten;
     })
 
@@ -75,4 +76,15 @@ function test2(){
 let b=test2();
 console.log(b); 
 
+<<<<<<< HEAD
 
+=======
+function test3(){
+    let a =["a","b","c"];
+    let b = ["d","e","f"];
+    //create combinations 
+    console.log(a.flatMap(el => b.map(el2 => el + el2)))
+}
+
+test3();
+>>>>>>> 7d189553d35d0f41cef2576dd7cde49cf433ca18

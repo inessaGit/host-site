@@ -24,49 +24,19 @@ let occurrence ;
 
 return answer.length; 
 */
-
 function sockMerchant(n, ar) {
-    let answer =[];
-    let map=new Map();
-
-    if (n==1)return 0;
-       //Count all occurences: brute force
-    ar.forEach((el)=>{
-    if(map.has(el)==false){
-        map.set(el,1)
+    // Write your code here
+    let map  = new Map();
+    
+    for (let i=0;i<n;i++){
+        map.has(ar[i])? map.set(ar[i],map.get(ar[i])+1) :
+        map.set(ar[i],1);
     }
-    else{
-        map.set(el,map.get(el)+1);
-    }
- });
-
-    function countPairs(n){ //n=int
-        let numOfPairs=0;
-        numOfPairs=Math.floor(n/2); 
-         return numOfPairs;
-    }
-
-//for each value in the map call count pairs
-let allPairs=[];
-map.forEach((value)=>
-{
-     allPairs.push(countPairs(value));
-}); 
-
-console.log(allPairs);
-
-// filter out allPairs >0 and store it in the same array
-allPairs=allPairs.filter((el)=>{
-    return el>0;
-});
-  
-  //Run array.reduce to sum all the values 
-
-let sum =allPairs.reduce((prevValue,curValue)=>{
-    return prevValue+curValue;
-},0);
-
-return sum; 
+   
+   let values = Array.from(map.values());
+   let res =0;
+   for (let val of values ){
+       res+=Math.floor(val/2);
+   }
+   return res;
 }
-
-
