@@ -23,3 +23,7 @@ var result = array2.flatMap(
     (val, i) => array2.slice(i+1).map( el => Math.abs(val-el) )
 );
 console.log(result.filter((el)=>el==1)); 
+
+let arr=
+'ThisIsTheStringToSplit'.match(/[A-Z]/g);
+console.log(arr)

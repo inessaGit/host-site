@@ -19,6 +19,15 @@ let answer =
 array.reduce(function(totalResult,currValue,currIndex,array),initialValue);
 */
 
+const array1 = [15, 16, 17, 18, 19];
+function reducer(previous, current, index, array1) {
+  const returns = previous + current;
+  console.log(`previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns}`);
+  return returns;
+}
+
+array1.reduce(reducer);
+
 var array = [1,2,3,4,5];
 let answer = array.reduce((totalResult,currValue)=>
 //The callback method must return a value using the required function       
@@ -65,4 +74,5 @@ function test2(){
 
 let b=test2();
 console.log(b); 
+
 
