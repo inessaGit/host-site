@@ -1,68 +1,26 @@
 /*
 https://www.hackerrank.com/challenges/one-month-preparation-kit-time-conversion/problem
 */
-
 function timeConversion(s) {
-  let n= s.length;
-  let converted =s.split('');
-    //  s[n-2]==='A' means am
-    //s[0]===0 then it is 0-9 
-    if (s[0]==='0'){
-        //0-9
-        let num =parseInt(s[1]);
-        if (s[n-2]==='P'){
-        num+=12; //IF PM -> change into 24 hrs format 
-        num=String(num);//cast to string 
-        converted[0]=num[0];
-        converted[1]=num[1];
-        }
-        else {
-            //am 
-            converted[0]=s[0];
-            converted[1]=s[1]
-        }
-    }
+let n = s.length;
+let res=s.slice(0,n-2); //07:05:45 removing AM/PM
+if (s.startsWith("12")){
+    return s.endsWith("PM")? res: res=res.replace("12","00");
+}
+let hr=parseInt(s.slice(0,3)); //store hr as numb (slice first two chars )
+hr<10? hr="0"+hr : hr=hr; 
+console.log(`hr=${hr}`);
 
-    else if (s[0]==='1') {
-        //10-12am 10-12pm 
-        //12am ->00:00:00
-      let num =s[0]+s[1];
-        if (s[1]==='0'||s[1]==='1'){
-        if (s[n-2]==='P'){
-      //change into 24 hr
-      num= parseInt(num)+12;
-      num=String(num);//cast to string 
-        converted[0]=num[0];
-        converted[1]=num[1];
-        }
-      }
-        else if (s[1]==='2'){
-            //12am =>00
-      if(s[n-2]==="A"){
-        converted[0]='0';
-        converted[1]='0';
-            }
-            else {
-         converted[0]=s[0];
-        converted[1]=s[1];
-            }
-        }
-        
-    }
-    converted=converted.slice(0,n-2)
-   return converted.join('') ;
-  }
-
-
-
-function foo(x,y) {
-	x = x || 11;
-	y = y || 31;
-
-	console.log( x + y );
+res =res.slice(2,n-2); 
+return s.endsWith("AM")? res=hr+res : res=parseInt(hr)+12+res ;
 }
 
-foo();				// 42
-foo( 5, 6 );		// 11
-foo( 5 );			// 36
-//foo( null, 6 );		// 17
+let s ="06:40:03AM";
+let s1= "11:59:59PM" ; //exp 23:59:59
+let s2="12:05:39AM" ; //exp 00:05:39
+let s3="04:59:59AM" ; //exp 04:59:59
+
+console.log(timeConversion(s1)); //exp 06:40:03
+console.log(timeConversion(s2)); 
+console.log(timeConversion(s3))
+

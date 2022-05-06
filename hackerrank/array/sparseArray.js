@@ -27,6 +27,23 @@ function matchingStrings(strings, queries) {
      return res; 
 }
 
+function matchingStrings1(strings,queries){
+let counter = 0;
+let output = [];
+
+for (let i=0; i < queries.length; i++){
+    for (let j=0; j < strings.length; j++){
+        if (queries[i] == strings[j]){
+            counter = counter + 1;
+        }
+    }
+    output.push(counter);
+    counter = 0;
+}
+
+return output;
+}
+
 let s=['aba','baba','aba','xzxb'];
 let q=['aba','xzxb','ab']; //exp [2,1,0]
 matchingStrings(s,q);
