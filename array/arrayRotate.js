@@ -10,7 +10,23 @@ Right rotation:
 - last el should be stored 
 */
 
-function rotateLeft(arr,numOfRotations){
+/*
+remove first element from array and reduce the length of array accordingly.
+ So, we can loop d times and then at each iteration remove the element 
+ from start and put it at the end.
+*/
+function rotateLeft1(d, arr) {
+    for(let i = 0; i < d; i++){
+        arr.push(arr.shift())
+    }
+    return arr;
+}
+function rotateLeft2(d, arr) {
+    return [...arr.slice(d), ...arr.slice(0,d)]
+}
+
+
+function rotateRight(arr,numOfRotations){
 
     let length = arr.length;
     for (let i=0;i<numOfRotations;i++){
@@ -25,7 +41,7 @@ function rotateLeft(arr,numOfRotations){
     return arr;
 }
 
-function rotateRight(arr,numOfRotations){
+function rotateLeft(arr,numOfRotations){
 
     let length = arr.length;
     for (let i=0;i<numOfRotations;i++){

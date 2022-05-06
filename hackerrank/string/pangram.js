@@ -16,3 +16,15 @@ function pangrams(s) {
   set.size<26? (ans='not pangram'):ans='pangram'
   return ans; 
 }
+
+function pangrams1(s) {
+    // replace(/ /g, "") is the same as replaceAll(" ","")
+    let ans ="pangram"
+    let str =s.toLowerCase().replace(/ /g, "");
+    let set = new Set(str);
+     console.log(set) ;
+    return set.size==26 ? ans : "not "+ans;
+
+}
+let s="qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun";
+console.log(pangrams1(s));

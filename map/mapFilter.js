@@ -6,6 +6,18 @@ console.log(map)
 let map2=new Map([...map].filter(([k,v])=>v>=2));
 console.log(map2); //Map(2) { 2 => 2, '4' => 4 }
 
+
+function getByValue(map, searchValue) {
+  for (let [key, value] of map.entries()) {
+    if (value === searchValue)
+      return key;
+  }
+}
+
+function getKeyByValue(object, value) {
+  return Object.keys(object).find(key => object[key] === value);
+}
+
 let map3=[...map];//array of arrays [ [ 1, 1 ], [ 2, 2 ], [ 3, 1 ], [ '4', 4 ], [ 'str', 'string' ] ]
 console.log(map3);
 console.log(map3.flat())
