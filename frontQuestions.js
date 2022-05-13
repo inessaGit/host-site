@@ -42,3 +42,8 @@ function test(){
         }
     }
 }
+
+
+let ar=[1,1,2,3,4];
+let b =ar.filter(el=>el!=1);
+console.log(b);

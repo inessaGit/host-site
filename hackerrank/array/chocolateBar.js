@@ -1,9 +1,9 @@
 /*
 https://www.hackerrank.com/challenges/three-month-preparation-kit-the-birthday-bar/problem?isFullScreen=true
-
-in progress TBC
+TBC
 */
 
+//wrong 
 function birthday(s, d, m) {
  let n=s.length; 
  let sum=0; 
@@ -26,7 +26,24 @@ function birthday(s, d, m) {
     return counter; 
 }
 
+//correct 
+function birthday1(s, d, m) {
+    // d=target sum , m=target window 
+    let counter =0;
+    let sum =0;
+    let windowStart=0;
 
+    for (let windowEnd=0;windowEnd<s.length; windowEnd++){
+        sum+=s[windowEnd];
+        if(windowEnd>=m-1){
+            if (d===sum)counter++;
+            sum-=s[windowStart]; 
+            windowStart++; //subtract el , slide window
+        }
+    }
+    console.log(counter);
+    return counter; 
+}
 
 let s=[2,2,1,3,2];
 let d=4;
