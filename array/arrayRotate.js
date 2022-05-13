@@ -17,7 +17,9 @@ remove first element from array and reduce the length of array accordingly.
 */
 function rotateLeft1(d, arr) {
     for(let i = 0; i < d; i++){
-        arr.push(arr.shift())
+        arr.push(arr.shift()); //take first element and put it at the end 
+
+        
     }
     return arr;
 }
