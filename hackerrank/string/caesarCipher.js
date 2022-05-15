@@ -16,6 +16,8 @@ Things to remember:
 - handle lower and UPPER CASES
 - total num of letters 26 but array index 0 based so runs from 0-25 where  ar[0]=a ar[25] =z ;
 
+Visuals: http://www.math.stonybrook.edu/~scott/papers/MSTP/crypto/3Caesar_Cipher.html
+
 */
 
 var assert = require('assert');
