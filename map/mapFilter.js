@@ -63,6 +63,6 @@ for (const [key, value] of Object.entries(object)) {
 
 //filter map entries by value 
 
-let res = Array.from(map.entries()).filter(([k,v])=>{
+let res2 = Array.from(map.entries()).filter(([k,v])=>{
     return v===1;
 })

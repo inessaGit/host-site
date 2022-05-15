@@ -13,3 +13,11 @@ let res=arr3.filter(el=>arr4.includes(el)).filter((el,index,arr)=>{
 });
 
 console.log (res);
+
+let array1=[1,2,3];
+let array2=[1,2,3,4,5]
+const filteredArray = array1.filter(value => array2.includes(value));
+let difference = array2.filter(x => !array1.includes(x));
+
+console.log(filteredArray) //[1,2,3]
+console.log(difference) //[4,5]
