@@ -50,8 +50,22 @@ function missingNumbers(arr, brr) {
      return diff;
      
  }
+//Approach: one map to store brr; then go over arr and decrement map values ; if value =0 delete el from map
+ function missingNumbers2(arr, brr) {
+   let map = new Map (); 
+   brr.forEach(el=> map.set(el,map.has(el)? map.get(el)+1:1)) ; 
+   let diff =[]; 
+   for (let el of arr){
+     map.has(el) ? map.set(el,map.get(el)-1) : map.set(el,1);
+    //go over map and delete el if frequency is the same 
+     map.get(el)==0 ? map.delete(el) :map;
 
-
+   }
+   console.log (map)
+   diff =Array.from(map.keys()).sort((a,b)=>{return a-b});
+   console.log(`ans=${diff}`)
+   return diff;
+ }
 let arr=[203,204, 205, 206, 207, 208, 203, 204, 205, 206];
 let brr=[203,204,204, 205, 206, 207, 205,208, 203, 206, 205, 206,204]; 
 //204 205 206 because freq is diff
@@ -61,5 +75,5 @@ let brr1=[7,2,5,4,6,3,5,3] //exp 4,6
 
 let arr2=[1,1,2,2,2]
 let brr2=[1,1,2,3]
-missingNumbers(arr,brr);
-missingNumbers(arr1,brr1);
+missingNumbers2(arr,brr);
+missingNumbers2(arr1,brr1);
