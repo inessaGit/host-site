@@ -40,3 +40,5 @@ function sockMerchant(n, ar) {
    }
    return res;
 }
+
+console.log(   `res=${res}`)
