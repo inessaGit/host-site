@@ -9,31 +9,20 @@ such that i != j and swapping the characters at s[i] and s[j].
 Similar to https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/
 =============
  Approach: 
- - length must be same 
- - count mismatch of letters e.g a vs c 
- 1. sort both strings ; if they are not equal return false ;
+ - handle edge cases length must be same, length must be more than 1
+ - split s into an array ; loop over s and store index of each mismatch into an array 
+  -- if mismatch >2 returna false 
+  --- if mismatch ==2 then try to swap using array(splitted string) ; after swapping check if equal 
 
-- count mismatch of positions e.g letter s[0]=a, goal[0]=b, s[1]=b, goal[1]=
--- if it is more than 2 then return false ; 
----if it is equal to 0 that means strings are equal : 
--------- A. s=abc goal =abc return false ; B. s=aaa goal =aaa return true 
-----if it is equal to 1 return true e.g s=abc goal =bac 
---- if it is equal to 2 
-
-1.  If both strings are of unequal length, no amounts of swapping will make them equal. Hence, return false.
+ 
+1.If both strings are of unequal length, no amounts of swapping will make them equal. Hence, return false.
 2. If both strings are equal, check to see if there is a duplication in one of the letters.
  If so, you can swap them together as swapping two characters within the string is a must.
   And in doing so, will still yield the same string and return true. 
-  I used a set to keep track of unique characters.
-
-3. If both strings are unequal to each other, loop through them and find character pairs 
-from A and B that are not the same and add them to an array. 
-The strings are only “buddy strings” and true 
-if there are exactly 4 characters in the array 
-and the concatenation of the third and first character(from A) 
-is the same as the concatenation of the second and last character(from B). 
-This simulates the swap of just 2 characters in A.
-
+3. Store mismatches into an array 
+--- if mismatches.length >2 return false 
+--- if mismatches.lenght ==2 then try swap 
+-- default case return false ;
  */
 
 var buddyStrings = function(s, goal) {
@@ -65,6 +54,8 @@ var buddyStrings = function(s, goal) {
         res = set.size<s.length; 
         return res; 
     }
+    //default case to handle diff letters e.g s=abac goal= abad 
+    return false;
 };
 
 //TC 3: "ab" "ab" //exp false because after swap ba!=ab  but TC2:  s = "aa", goal = "aa" exp true because these are SAME Letters  
@@ -77,6 +68,11 @@ let goal1="abcbb"; //exp false
 
 let s2=   "aaaaaaabc" ;
 let goal2="aaaaaaacb" ; //exp true
+
+let s3="abac";
+let goal3= "abad"; //exp false 
+
 //console.log(buddyStrings(s,goal)); 
 //console.log(buddyStrings(s1,goal1)); 
 console.log(buddyStrings(s2,goal2)); 
+console.log(buddyStrings(s3,goal3)); 
