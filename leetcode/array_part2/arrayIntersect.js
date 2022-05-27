@@ -22,4 +22,11 @@ var intersect = function(nums1, nums2) {
 }
 let nums1 =[1,2,1,2,3]
 let nums2=[2,2]
+let nums3 =[1,2,1,2,3]
+
 intersect(nums1,nums2);
+
+//console.log(nums1==nums2)
+console.log(nums1==nums3) //false 
+//If all you need is to see if two arrays have the same items and they are in the same order, try this:
+console.log(nums1.toString()==nums3.toString()); //true 
