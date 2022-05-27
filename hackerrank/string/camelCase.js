@@ -101,3 +101,7 @@ console.log(result);
 
 
 processData();
+let m ="plasticCup()";
+let array = m.split(/(?=[A-Z])/);
+array = array.join(' ');
+console.log(array);
