@@ -10,28 +10,70 @@ AND
  If it is beautiful, print YES x, where x is the first number of the increasing sequence. 
  If there are multiple such values of , choose the smallest.
   Otherwise, print NO.
+
+  Approach: 
+-  know that the input string can contain 32 characters maximum.
+-  know that can't be beautiful if it has 1 char
+
+
+  function separateNumbers(s) {
+    for (let i = 1; i <= Math.floor(s.length / 2); i++) {
+        const start = s.slice(0, i)
+        let num = BigInt(start)
+        let built = ''
+        while (built.length < s.length) 
+        built += num++
+        if (built === s) return console.log('YES', start)
+    }
+    console.log('NO')
+}
 */
 
 function separateNumbers(s) {
-    let res ='NO'
-    let n = s.length;
-
-    for(let i=1;i<n; i++){
-       
-        //s[i]  is a char e.g '1' 
-        let n1=parseInt(s[i]);
-        let n2=parseInt(s[i-1])
-         if(n1-n2!=1){
-            console.log(res)
-            break;
-        }
-        else {
-            res ='YES '
-            console.log(res+n2)
-        }
-    }
-    
+    if (s.length <= 1) {
+        console.log('NO');
+        return;
+    };
+    let res = checkBeau(s, 1);
+    if(res) console.log('YES ' + res);
+    else console.log('NO');
 }
+
+function checkBeau(s, len){
+    if (len >= s.length) return null;
+    let numLen = len;
+    let idx = numLen;
+    let num = s.substring(0, numLen);
+    let flag = false;
+    
+    while(idx + numLen <= s.length){
+        const nextNum = s.substring(idx, idx+numLen);
+        if(nextNum[0] === '0') break;
+        let tmp = parseInt(BigInt(nextNum) - BigInt(num));
+        // let tmp = nextNum - num;
+        // console.log('tmp:',tmp)
+        if (tmp === 1) {
+            idx += numLen;
+            num = nextNum;
+        } else if(tmp < 1){
+            numLen += 1;
+            continue;
+        } else break;
+    }
+    if (idx >= s.length) return s.substring(0, len);
+    else return checkBeau(s, len+1);
+}
+
+function main() {
+    const q = parseInt(readLine().trim(), 10);
+
+    for (let qItr = 0; qItr < q; qItr++) {
+        const s = readLine();
+
+        separateNumbers(s);
+    }
+}
+
 // "1230" no 10203 no "1234" yes 
 let s='1234' //exp YES 1 
 let s2="91011" //YES 9
