@@ -2,7 +2,7 @@
 https://www.hackerrank.com/challenges/three-month-preparation-kit-separate-the-numbers/problem?isFullScreen=true
 
 A numeric string, , is beautiful if it can be split into a sequence of two or more positive integers: 
-- i.e., each element in the sequence is  more than the previous element).
+- i.e., each element in the sequence is  more than the previous element ; a[i]<a[i+1]
 AND
 - no leading 0 e.g s=10203 = {1,02,03} not beautiful because it has 0 
 AND
@@ -14,21 +14,12 @@ AND
 
 function separateNumbers(s) {
     let res ='NO'
-    let n = s.length;
+    let n = s.length; 
+    let nums =s.split('').map((el)=>{return parseInt(el)});
+    console.log(nums);
 
-    for(let i=1;i<n; i++){
-       
-        //s[i]  is a char e.g '1' 
-        let n1=parseInt(s[i]);
-        let n2=parseInt(s[i-1])
-         if(n1-n2!=1){
-            console.log(res)
-            break;
-        }
-        else {
-            res ='YES '
-            console.log(res+n2)
-        }
+    for(let i=0;i<n;i++){
+
     }
     
 }
