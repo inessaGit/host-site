@@ -28,3 +28,7 @@ test1(null); //error
 test1(1);//1 
 test1(undefined); //error 
 test1('hello')//hello 
+
+let word ="test";
+let m = word.replace(/t/g, 'm');
+console.log(`m=${m}`)
