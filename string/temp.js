@@ -26,4 +26,6 @@ console.log(result.filter((el)=>el==1));
 
 let arr=
 'ThisIsTheStringToSplit'.match(/[A-Z]/g);
-console.log(arr)
+console.log(arr);
+
+console.log(Number("hello23".match(/[0-9]/)));
