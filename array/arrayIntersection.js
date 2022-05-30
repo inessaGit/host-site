@@ -21,3 +21,12 @@ let difference = array2.filter(x => !array1.includes(x));
 
 console.log(filteredArray) //[1,2,3]
 console.log(difference) //[4,5]
+
+
+function arrayDiff(a, b) {
+    let res =a.filter((el)=>  !b.includes(el));
+    
+    console.log(res);
+    return res;
+  }
+  arrayDiff([1,2],[1]);

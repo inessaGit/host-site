@@ -10,15 +10,40 @@ AND
  If it is beautiful, print YES x, where x is the first number of the increasing sequence. 
  If there are multiple such values of , choose the smallest.
   Otherwise, print NO.
+
+
+  function separateNumbers(s) {
+    for (let i = 1; i <= Math.floor(s.length / 2); i++) {
+        const start = s.slice(0, i)
+        let num = BigInt(start)
+        let built = ''
+        while (built.length < s.length) built += num++
+        if (built === s) return console.log('YES', start)
+    }
+    console.log('NO')
+}
+
+
 */
 
 function separateNumbers(s) {
     let res ='NO'
     let n = s.length; 
     let nums =s.split('').map((el)=>{return parseInt(el)});
-    console.log(nums);
+    console.log(nums); //array of numbers 
 
-    for(let i=0;i<n;i++){
+    if(s.includes('0')){
+         for (let i=0;i<n;i++){
+
+         }
+    }
+    for(let i=1;i<n;i++){
+     //check if increasing means nums[i]-nums[i-1]=1 
+      if(nums[i]-nums[i-1]!=1){// e.g 2,1 ,
+          console.log(res);
+          console.log(`==   nums[i]-nums[i-1]!=1`)
+      }
+      
 
     }
     
