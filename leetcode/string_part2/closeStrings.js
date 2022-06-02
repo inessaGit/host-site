@@ -8,14 +8,3 @@ Both string have the same frequency of charracters.
 E.g string "abbccddd" has [1, 2, 2, 3] char frequency, and so does "bddccaaa".
 */
 
-function test(s){
-    let res = '';
- for (let ch of s){
-     if (ch!='h' && ch!='e'){
-         res+=ch;
-     }
- }
- console.log(res);
-}
-let s="hello"; 
-test(s)
