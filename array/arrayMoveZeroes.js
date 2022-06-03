@@ -8,9 +8,9 @@ Move zeroes to the left
 */
 
 var moveZeroesRight = function(nums) {
-    
     var idx = 0;
-    for (var i = 0; i < nums.length; i++) {
+    let n =nums.length;
+    for (let i = 0; i < n; i++) {
       if (nums[i] !== 0) {
         nums[idx] = nums[i];
         if (idx != i) {
@@ -24,9 +24,9 @@ var moveZeroesRight = function(nums) {
 //similar 
 var moveZeroesRight2=function(nums){
  let j=0;
- let length =nums.length;
+ let n =nums.length;
 
- for (let i=0;i<length;i++){
+ for (let i=0;i<n;i++){
     if (nums[i]!=0){
         let temp = nums[j];
         nums[j]=nums[i];
