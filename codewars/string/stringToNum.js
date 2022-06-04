@@ -13,3 +13,9 @@ var stringToNumber = function(str){
     return num.toString();
   }
   
+
+  //Array of strings to array of numbers 
+['1', '2', '3'].map(Number); // [1, 2, 3]
+
+A//rray of numbers to array of strings 
+[1,2,3].map(String);

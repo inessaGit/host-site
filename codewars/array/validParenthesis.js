@@ -18,14 +18,14 @@ function validParentheses(parens){
     return !parens;
   }
 
+  //important to put second condition  to avoid counting ())( as valid combo 
   function validParentheses1(parens){
-    var result = 0;
-    
-    for (var i = 0 ; i < parens.length && result>= 0; i++) {
-      result+= (parens[i] == '(') ? 1 : -1;    
+   let sum = 0;
+   let n =parens.length; 
+    for (let i = 0 ; i < n && sum>= 0; i++) {
+      sum+= (parens[i] == '(') ? 1 : -1;    
     }
-    
-    return (result == 0);
+    return (sum == 0);
   }
 
   validParentheses('()');
