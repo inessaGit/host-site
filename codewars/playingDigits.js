@@ -13,11 +13,9 @@ n=89 p=1
 */
 
 function digPow(n, p){
-    // ...
     let arr=n.split('');
     console.log(arr);
     let sum =0;
-    
     for (let el of arr){
       //raise to the power and sum 
       //check is n==sum*power

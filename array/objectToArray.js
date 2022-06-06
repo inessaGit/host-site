@@ -1,4 +1,4 @@
-//object to array => using Object.entrie(obj) returns array 
+//object to array => using Object.entries(obj) returns array 
 let obj ={};
 let str='abcdefaa';
 for (let i=0;i<str.length;i++){
