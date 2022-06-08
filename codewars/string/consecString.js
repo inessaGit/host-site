@@ -13,10 +13,15 @@ testing(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2), "
 Approach : 
 1. create pairs using for loop
 2. 
+Array.slice 
+The slice() method returns a shallow copy of a portion of an array into a new array object
+ selected from start to end (end not included) 
+ where start and end represent the index of items in that array. 
+ The original array will not be modified.
 */
 function longestConsec(strarr, k) {
     if (strarr.length == 0 || k > strarr.length || k <= 0) return '';
-       let longStr = '';
+    let longStr = '';
     let newStr = '';
     for (let i = 0; i < strarr.length; i++){
        newStr = strarr.slice(i, i+k);
@@ -29,20 +34,23 @@ function longestConsec(strarr, k) {
 
 
  function longestConsec1(strarr, k) {
-    if (k <= 0 || k > strarr.length) {
-      return "";
-    }
-    
-    return strarr
-    .map((value, index) => (
-      strarr.slice(index, index+k).join('')
-    ))
-    .reduce((longest, current) => current.length > longest.length ? current : longest)
-    
+    if (strarr.length == 0 || k > strarr.length || k <= 0) return '';
+    let res = strarr
+    .map((value, index) => ( //an array(list) strarr of strings 
+      strarr.slice(index, index+k).join('') //slice <k> number of string from the array using array.slice() and join(') to turn into string
+    ));
+    console.log(`here res=${res}`) 
+  //  console.log(Array.isArray(res))
+    res=res.reduce((longest, current) => current.length > longest.length ? current : longest)
+    console.log(`after using array.reduce res=${res}`)
+
+    return res; 
 }
 
   let nums = [1,2,3,4,5,6] 
-  console.log(nums.slice(0,3))
-  longestConsec(nums,3); ////[1,2,3  3,4,5  5,6]
+  console.log(`here nums=${nums}`) 
+  //console.log(Array.isArray(nums))
 
-  //longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2); // "abigailtheta")
+  //longestConsec(nums,3); ////[1,2,3  3,4,5  5,6]
+
+  longestConsec1(["zone", "abigail", "theta", "form", "libe", "zas"], 2); // "abigailtheta")

@@ -2,6 +2,9 @@
 /*
 https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/javascript
 let regex=/\s(.*)/g ; to find firts letter after space 
+replace(regexp, replacerFunction)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
 */
 
 function abbrevName(name){
