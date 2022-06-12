@@ -14,6 +14,12 @@ to know the length of the string before using split (2 different regex is used f
 - even length string regex: str.split(/(?=(?:..)*$)/)
 - odd length string regex str.split(/(?=(?:..)*.$)/)
 
+?= is a positive lookahead
+ What it's saying is that the captured match must be followed 
+ by whatever is within the parentheses but that part isn't captured.
+
+ For example, /\w+(?=\t)/ matches a word followed by a tab, without including the tab in $&.
+
 */
 function solution(s){
     let res= (s+"_").match(/.{2}/g)||[]; 

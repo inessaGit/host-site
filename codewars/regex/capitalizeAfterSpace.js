@@ -8,8 +8,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 */
 
 function abbrevName(name){
-
-    // code away
   let first =name[0].toUpperCase();
   let regex=/\s(.*)/g;
 
