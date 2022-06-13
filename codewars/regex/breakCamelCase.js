@@ -1,6 +1,9 @@
 /*
 https://www.codewars.com/kata/5208f99aee097e6552000148/train/javascript
 
+. - a "dot" indicates any character
+* - means "0 or more instances of the preceding regex token"
+
 Approach: 
 - using String.split
 - using positive lookahead (?=[pattern]) to detect capital letters but exclude the letter from capture group
