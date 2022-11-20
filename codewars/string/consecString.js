@@ -41,6 +41,7 @@ function longestConsec(strarr, k) {
     ));
     console.log(`here res=${res}`) 
   //  console.log(Array.isArray(res))
+  //loop over array ; compare pv with cv if cv longer than store it otherwise store pv ;
     res=res.reduce((longest, current) => current.length > longest.length ? current : longest)
     console.log(`after using array.reduce res=${res}`)
 
